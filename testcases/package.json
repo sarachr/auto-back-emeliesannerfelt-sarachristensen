@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cypress open",
     "cypress:run": "cypress run --reporter mochawesome",
     "test:vrt": "percy exec cypress run --spec cypress/integration/percy.spec.js"
   },
@@ -14,7 +14,7 @@
   "devDependencies": {
     "@percy/cli": "*",
     "@percy/cypress": "^3.1.0",
-    "cypress": "^7.1.0",
+    "cypress": "^7.3.0",
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.2.0"
