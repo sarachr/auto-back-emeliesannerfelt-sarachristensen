@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+
 describe('Test suite', () => {
     it('GET request towards /api/clients', () => {
         cy.authenticate().then((response =>{
@@ -17,6 +18,7 @@ describe('Test suite', () => {
             cy.log(JSON.stringify(response.body[1]))
         }))
     })
+
 
     it('GET request towards /api/client/1', () => {
         cy.authenticate().then((response => {
