@@ -23,3 +23,25 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('authenticate', () => {
+    //https://docs.cypress.io/api/cypress-api/custom-commands#Syntax
+    const USER_CREDENTIALS = {
+       "username": "tester01", 
+       "password": "GteteqbQQgSr88SwNExUQv2ydb7xuf8c"
+    }
+
+    //https://docs.cypress.io/api/commands/request#Options
+    cy.request({
+        method: 'POST', 
+        url: 'http://localhost:3000/api/login', 
+        headers: {
+            'Content-Type':'application/json'
+        }, 
+        body: USER_CREDENTIALS
+    }).then((response => {
+        expect(response.status).to.eq(200)            
+        Cypress.env({loginToken:response.body})
+        cy.log(response.body)
+    }))
+})
