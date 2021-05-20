@@ -1,5 +1,7 @@
 {
     "baseUrl": "http://localhost:3000",
+    "watchForFileChanges": false,
+    "defaultCommandTimeout": 10000,
     "reporter": "mochawesome",
     "chromeWebSecurity": false,
     "reporterOptions": {

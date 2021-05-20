@@ -24,6 +24,16 @@ describe('Test cases', () => {
             }).then((response => {
                 expect(response.status).to.eq(200)
             }))
+            cy.request({
+                method: 'DELETE',
+                url: 'http://localhost:3000/api/client/3',
+                headers: {
+                    'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
+                    'Content-Type': 'application/json'
+                },
+            }).then((response => {
+                expect(response.status).to.eq(200)
+            }))
 
             // logout
             cy.request({
@@ -195,8 +205,23 @@ describe('Test cases', () => {
     it('Delete a client', () => {
         cy.authenticate().then((response => {
             cy.request({
+                method: 'POST',
+                url: 'http://localhost:3000/api/client/new',
+                headers: {
+                    'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
+                    'Content-Type': 'application/json'
+                },
+                body: {
+                    "name": "Tester Testersson",
+                    "email": "testnisse01@email.com",
+                    "telephone": "0800000017282"
+                }
+            }).then((response => {
+                expect(response.status).to.eq(200)
+            }))
+            cy.request({
                 method: 'DELETE',
-                url: 'http://localhost:3000/api/client/2',
+                url: 'http://localhost:3000/api/client/3',
                 headers: {
                     'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
                     'Content-Type': 'application/json'
