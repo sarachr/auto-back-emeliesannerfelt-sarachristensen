@@ -140,8 +140,6 @@ describe('Test cases', () => {
 
     it('Create a room', () => {
         cy.authenticate().then((response => {
-
-
             cy.request({
                 method: 'POST',
                 url: 'http://localhost:3000/api/room/new',
@@ -170,8 +168,8 @@ describe('Test cases', () => {
             }).then((response => {
                 expect(response.status).to.eq(200)
             }))
- 
-            
+
+
 
             // logout
             cy.request({
@@ -190,7 +188,7 @@ describe('Test cases', () => {
 
     it('Delete bill 2', () => {
         cy.authenticate().then((response => {
-                        cy.request({
+            cy.request({
                 method: 'POST',
                 url: 'http://localhost:3000/api/bill/new',
                 headers: {
