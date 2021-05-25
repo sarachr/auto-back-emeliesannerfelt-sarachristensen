@@ -10,14 +10,14 @@ import * as login from '../helpers/clientHelpers'
 
 describe('CREATE A CLIENT', () => {
     it('Create a new client', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             client.createClientRequest()
             client.performLogout()
         }))
     })
 
     it('Delete a client', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             client.createClientRequest()
             client.deleteClientRequest(Cypress.env().lastID)
             client.performLogout()
@@ -29,14 +29,14 @@ describe('CREATE A CLIENT', () => {
 
 describe('CREATE A BILL', () => {
     it('Create a bill', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             bill.createBillRequest()
             bill.performLogout()
         }))
     })
 
     it('Delete a bill', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             bill.createBillRequest()
             bill.deleteBillRequest(Cypress.env().lastID)
             bill.performLogout()
@@ -48,14 +48,14 @@ describe('CREATE A BILL', () => {
 
 describe('CREATE A RESERVATION', () => {
     it('Create a reservation', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             reservation.createReservationRequest()
             reservation.performLogout()
         }))
     })
 
     it('Delete a reservation', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             reservation.createReservationRequest()
             reservation.deleteReservationRequest(Cypress.env().lastID)
             reservation.performLogout()
@@ -67,14 +67,14 @@ describe('CREATE A RESERVATION', () => {
 
 describe('CREATE ROOM', () => {
     it('Create a room', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             room.createRoomRequest()
             room.performLogout()
         }))
     })
 
     it('Delete a room', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             room.createRoomRequest()
             room.deleteRoomRequest(Cypress.env().lastID)
             room.performLogout()
@@ -86,14 +86,14 @@ describe('CREATE ROOM', () => {
 
 describe('DELETE CLIENT', () => {
     it('Create a new client', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             client.createClientRequest()
             client.performLogout()
         }))
     })
 
     it('Delete a client', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             client.createClientRequest()
             client.deleteClientRequest(Cypress.env().lastID)
             client.performLogout()
@@ -105,14 +105,14 @@ describe('DELETE CLIENT', () => {
 
 describe('DELETE BILL', () => {
     it('Create a bill', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             bill.createBillRequest()
             bill.performLogout()
         }))
     })
 
     it('Delete a bill', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             bill.createBillRequest()
             bill.deleteBillRequest(Cypress.env().lastID)
             bill.performLogout()
@@ -125,14 +125,14 @@ describe('DELETE BILL', () => {
 
 describe('DELETE RESERVATION', () => {
     it('Create a reservation', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             reservation.createReservationRequest()
             reservation.performLogout()
         }))
     })
 
     it('Delete a reservation', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             reservation.createReservationRequest()
             reservation.deleteReservationRequest(Cypress.env().lastID)
             reservation.performLogout()
@@ -145,14 +145,14 @@ describe('DELETE RESERVATION', () => {
 
 describe('DELETE ROOM', () => {
     it('Create a room', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             room.createRoomRequest()
             room.performLogout()
         }))
     })
 
     it('Delete a room', () => {
-        cy.authenticate().then((response =>{
+        cy.authenticate().then((response => {
             room.createRoomRequest()
             room.deleteRoomRequest(Cypress.env().lastID)
             room.performLogout()
@@ -164,11 +164,19 @@ describe('DELETE ROOM', () => {
 
 describe('LOG IN', () => {
     it('login', () => {
-        cy.authenticate().then((response =>{
-            performLogout()
+        cy.authenticate().then((response => {
+            login.performLogout()
         }))
     })
 
 
-// TEST 10 LOGGA UT
+    // TEST 10 LOGGA UT
+describe('LOG OUT', () => {
+    it('logout', () => {
+        cy.authenticate().then((response => {
+            login.performLogout()
+        }))
+    
+        })
+    })
 })
