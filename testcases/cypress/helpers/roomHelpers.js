@@ -4,7 +4,7 @@ const CREATE_ROOM_ENDPOINT = 'http://localhost:3000/api/room/new'
 
 
 //ROOM
-function createRoomPayload(){
+function createRoomPayload() {
     let roomPayload = {
         "features": ["balcony"],
         "category": "double",
@@ -17,43 +17,43 @@ function createRoomPayload(){
     return roomPayload
 }
 
-function createRoomRequest(){
+function createRoomRequest() {
     cy.request({
         method: 'POST',
         url: CREATE_ROOM_ENDPOINT,
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        }, 
-        body:createRoomPayload()
+        },
+        body: createRoomPayload()
     }).then((response => {
         expect(response.status).to.eq(200)
-        Cypress.env({lastID:response.body.id})
-        
+        Cypress.env({ lastID: response.body.id })
+
     }))
 }
 
-function deleteRoomRequest(idToDelete){
+function deleteRoomRequest(idToDelete) {
     cy.request({
         method: 'DELETE',
-        url:'http://localhost:3000/api/room/'+idToDelete,
+        url: 'http://localhost:3000/api/room/' + idToDelete,
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))
 }
 
-function performLogout(){
+function performLogout() {
     cy.request({
         method: 'POST',
-        url:'http://localhost:3000/api/logout',
+        url: 'http://localhost:3000/api/logout',
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))

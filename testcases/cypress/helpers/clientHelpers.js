@@ -3,7 +3,7 @@ const CREATE_CLIENT_ENDPOINT = 'http://localhost:3000/api/client/new'
 
 
 //functions
-function createClientPayload(){
+function createClientPayload() {
     let clientPayload = {
         "name": "Tester Testersson",
         "email": "testnisse01@email.com",
@@ -14,44 +14,44 @@ function createClientPayload(){
 }
 
 
-function createClientRequest(){
+function createClientRequest() {
     cy.request({
         method: 'POST',
         url: CREATE_CLIENT_ENDPOINT,
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        }, 
-        body:createClientPayload()
+        },
+        body: createClientPayload()
     }).then((response => {
         expect(response.status).to.eq(200)
-        Cypress.env({lastID:response.body.id})
-        
+        Cypress.env({ lastID: response.body.id })
+
     }))
 }
 
-function deleteClientRequest(idToDelete){
+function deleteClientRequest(idToDelete) {
     cy.request({
         method: 'DELETE',
-        url:'http://localhost:3000/api/client/'+idToDelete,
+        url: 'http://localhost:3000/api/client/' + idToDelete,
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))
 }
 
 
-function performLogout(){
+function performLogout() {
     cy.request({
         method: 'POST',
-        url:'http://localhost:3000/api/logout',
+        url: 'http://localhost:3000/api/logout',
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))
@@ -66,6 +66,6 @@ module.exports = {
     deleteClientRequest,
     performLogout,
 
-   
+
 
 }

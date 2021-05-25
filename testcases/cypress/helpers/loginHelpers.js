@@ -4,7 +4,7 @@ const LOGIN_ENDPOINT = 'http://localhost:3000/api/login'
 
 
 
-function loginPayload(){
+function loginPayload() {
     let loginPayload = {
         "username": "tester01",
         "password": "GteteqbQQgSr88SwNExUQv2ydb7xuf8c",
@@ -13,27 +13,27 @@ function loginPayload(){
     return loginPayload
 }
 
-function loginRequest(){
+function loginRequest() {
     cy.request({
         method: 'POST',
-        url:'http://localhost:3000/api/login',
+        url: 'http://localhost:3000/api/login',
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))
 }
 
-function performLogout(){
+function performLogout() {
     cy.request({
         method: 'POST',
-        url:'http://localhost:3000/api/logout',
+        url: 'http://localhost:3000/api/logout',
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))
