@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import * as client from '../helpers/clientHelpers'
-import * as bill from '../helpers/clientHelpers'
+import * as bill from '../helpers/billHelpers'
 import * as reservation from '../helpers/clientHelpers'
 import * as room from '../helpers/clientHelpers'
 import * as login from '../helpers/clientHelpers'
@@ -168,15 +168,16 @@ describe('LOG IN', () => {
             login.performLogout()
         }))
     })
+})
 
 
-    // TEST 10 LOGGA UT
-    describe('LOG OUT', () => {
-        it('logout', () => {
-            cy.authenticate().then((response => {
-                login.performLogout()
-            }))
+// TEST 10 LOGGA UT
+describe('LOG OUT', () => {
+    it('logout', () => {
+        cy.authenticate().then((response => {
+            login.performLogout()
+        }))
 
-        })
     })
 })
+
