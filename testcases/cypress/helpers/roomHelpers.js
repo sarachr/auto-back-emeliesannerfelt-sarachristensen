@@ -1,28 +1,31 @@
-const CREATE_CLIENT_ENDPOINT = 'http://localhost:3000/api/client/new'
+/// <reference types="cypress" />
+
+const CREATE_ROOM_ENDPOINT = 'http://localhost:3000/api/room/new'
 
 
-
-//functions
-function createClientPayload(){
-    let clientPayload = {
-        "name": "Tester Testersson",
-        "email": "testnisse01@email.com",
-        "telephone": "0800000017282"
+//ROOM
+function createRoomPayload(){
+    let roomPayload = {
+        "features": ["balcony"],
+        "category": "double",
+        "number": "198",
+        "floor": "1",
+        "available": true,
+        "price": "222222"
     }
 
-    return clientPayload
+    return roomPayload
 }
 
-
-function createClientRequest(){
+function createRoomRequest(){
     cy.request({
         method: 'POST',
-        url: CREATE_CLIENT_ENDPOINT,
+        url: CREATE_ROOM_ENDPOINT,
         headers: {
             'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
             'Content-Type': 'application/json'
         }, 
-        body:createClientPayload()
+        body:createRoomPayload()
     }).then((response => {
         expect(response.status).to.eq(200)
         Cypress.env({lastID:response.body.id})
@@ -30,10 +33,10 @@ function createClientRequest(){
     }))
 }
 
-function deleteClientRequest(idToDelete){
+function deleteRoomRequest(idToDelete){
     cy.request({
         method: 'DELETE',
-        url:'http://localhost:3000/api/client/'+idToDelete,
+        url:'http://localhost:3000/api/room/'+idToDelete,
         headers: {
             'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
             'Content-Type': 'application/json'
@@ -42,7 +45,6 @@ function deleteClientRequest(idToDelete){
         expect(response.status).to.eq(200)
     }))
 }
-
 
 function performLogout(){
     cy.request({
@@ -56,16 +58,11 @@ function performLogout(){
         expect(response.status).to.eq(200)
     }))
 }
-
-
-
 //exports
 module.exports = {
-    createClientPayload,
-    createClientRequest,
-    deleteClientRequest,
+    createRoomRequest,
+    deleteRoomRequest,
+    createRoomPayload,
     performLogout,
-
-   
 
 }

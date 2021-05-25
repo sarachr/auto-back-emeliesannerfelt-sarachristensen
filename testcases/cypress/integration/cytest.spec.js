@@ -3,8 +3,8 @@
 import * as client from '../helpers/clientHelpers'
 import * as bill from '../helpers/billHelpers'
 import * as reservation from '../helpers/reservationHelpers'
-import * as room from '../helpers/clientHelpers'
-import * as login from '../helpers/clientHelpers'
+import * as room from '../helpers/roomHelpers'
+import * as login from '../helpers/loginHelpers'
 
 //TEST 1 - CREATE A CLIENT
 
