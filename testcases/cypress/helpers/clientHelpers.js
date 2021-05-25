@@ -2,6 +2,7 @@ const CREATE_CLIENT_ENDPOINT = 'http://localhost:3000/api/client/new'
 const CREATE_BILL_ENDPOINT = 'http://localhost:3000/api/bill/new'
 const CREATE_RESERVATION_ENDPOINT = 'http://localhost:3000/api/reservation/new'
 const CREATE_ROOM_ENDPOINT = 'http://localhost:3000/api/room/new'
+const LOGIN_ENDPONT = 'http://localhost:3000/api/login'
 
 //functions
 function createClientPayload(){
@@ -180,6 +181,28 @@ function deleteRoomRequest(idToDelete){
     }))
 }
 
+function loginPayload(){
+    let loginPayload = {
+        "username": "tester01",
+        "password": "GteteqbQQgSr88SwNExUQv2ydb7xuf8c",
+    }
+
+    return loginPayload
+}
+
+function loginRequest(){
+    cy.request({
+        method: 'POST',
+        url:'http://localhost:3000/api/login',
+        headers: {
+            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'Content-Type': 'application/json'
+        },                              
+    }).then((response => {
+        expect(response.status).to.eq(200)
+    }))
+}
+
 
 //exports
 module.exports = {
@@ -196,5 +219,7 @@ module.exports = {
     createRoomRequest,
     deleteRoomRequest,
     createRoomPayload,
+    loginPayload,
+    loginRequest,
 
 }

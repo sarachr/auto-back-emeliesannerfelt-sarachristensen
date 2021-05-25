@@ -4,6 +4,7 @@ import * as client from '../helpers/clientHelpers'
 import * as bill from '../helpers/clientHelpers'
 import * as reservation from '../helpers/clientHelpers'
 import * as room from '../helpers/clientHelpers'
+import * as login from '../helpers/clientHelpers'
 
 //TEST 1 - CREATE A CLIENT
 
@@ -161,5 +162,13 @@ describe('DELETE ROOM', () => {
 
 // TEST 9 LOGGA IN
 
-// TEST 10 LOGGA UT
+describe('LOG IN', () => {
+    it('login', () => {
+        cy.authenticate().then((response =>{
+            performLogout()
+        }))
+    })
 
+
+// TEST 10 LOGGA UT
+})
