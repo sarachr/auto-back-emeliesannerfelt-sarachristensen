@@ -1,0 +1,610 @@
+{
+  "stats": {
+    "suites": 10,
+    "tests": 18,
+    "passes": 18,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-05-25T12:32:44.840Z",
+    "end": "2021-05-25T12:32:56.504Z",
+    "duration": 11664,
+    "testsRegistered": 18,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a4a52b25-6421-4086-9ab1-eb3c34963e3e",
+      "title": "",
+      "fullFile": "cypress/integration/cytest.spec.js",
+      "file": "cypress/integration/cytest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a059a59-3748-4c2e-82fc-e3e2974835bd",
+          "title": "CREATE A CLIENT",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a new client",
+              "fullTitle": "CREATE A CLIENT Create a new client",
+              "timedOut": null,
+              "duration": 686,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  client.createClientRequest();\n  client.performLogout();\n});",
+              "err": {},
+              "uuid": "64caa7a0-841e-4a50-918c-aed1b4c5993a",
+              "parentUUID": "0a059a59-3748-4c2e-82fc-e3e2974835bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a client",
+              "fullTitle": "CREATE A CLIENT Delete a client",
+              "timedOut": null,
+              "duration": 649,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  client.createClientRequest();\n  client.deleteClientRequest(Cypress.env().lastID);\n  client.performLogout();\n});",
+              "err": {},
+              "uuid": "fd7a7964-7b46-4eac-9ae3-87061dd9552b",
+              "parentUUID": "0a059a59-3748-4c2e-82fc-e3e2974835bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "64caa7a0-841e-4a50-918c-aed1b4c5993a",
+            "fd7a7964-7b46-4eac-9ae3-87061dd9552b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1335,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5ad0fa14-1c88-4757-beea-2ec0e4e5f55c",
+          "title": "CREATE A BILL",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a bill",
+              "fullTitle": "CREATE A BILL Create a bill",
+              "timedOut": null,
+              "duration": 617,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  bill.createBillRequest();\n  bill.performLogout();\n});",
+              "err": {},
+              "uuid": "8b3ccd4d-22f4-407d-ab66-074b772e523d",
+              "parentUUID": "5ad0fa14-1c88-4757-beea-2ec0e4e5f55c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a bill",
+              "fullTitle": "CREATE A BILL Delete a bill",
+              "timedOut": null,
+              "duration": 656,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  bill.createBillRequest();\n  bill.deleteBillRequest(Cypress.env().lastID);\n  bill.performLogout();\n});",
+              "err": {},
+              "uuid": "a5ecba61-5ffb-40a1-b1cb-0788ee7d71bf",
+              "parentUUID": "5ad0fa14-1c88-4757-beea-2ec0e4e5f55c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8b3ccd4d-22f4-407d-ab66-074b772e523d",
+            "a5ecba61-5ffb-40a1-b1cb-0788ee7d71bf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1273,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d5755956-e3ec-4ec4-b9b1-8a76af35db55",
+          "title": "CREATE A RESERVATION",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a reservation",
+              "fullTitle": "CREATE A RESERVATION Create a reservation",
+              "timedOut": null,
+              "duration": 740,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  reservation.createReservationRequest();\n  reservation.performLogout();\n});",
+              "err": {},
+              "uuid": "92e29d0e-06d0-4c6d-86c1-7498dc63bf09",
+              "parentUUID": "d5755956-e3ec-4ec4-b9b1-8a76af35db55",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a reservation",
+              "fullTitle": "CREATE A RESERVATION Delete a reservation",
+              "timedOut": null,
+              "duration": 814,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  reservation.createReservationRequest();\n  reservation.deleteReservationRequest(Cypress.env().lastID);\n  reservation.performLogout();\n});",
+              "err": {},
+              "uuid": "61616a92-2348-4a05-b3ca-6b01c360eae7",
+              "parentUUID": "d5755956-e3ec-4ec4-b9b1-8a76af35db55",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "92e29d0e-06d0-4c6d-86c1-7498dc63bf09",
+            "61616a92-2348-4a05-b3ca-6b01c360eae7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1554,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "401fb81a-53a5-4107-8a57-82f36cf2f8b2",
+          "title": "CREATE ROOM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a room",
+              "fullTitle": "CREATE ROOM Create a room",
+              "timedOut": null,
+              "duration": 677,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  room.createRoomRequest();\n  room.performLogout();\n});",
+              "err": {},
+              "uuid": "6be072e3-5d12-4c36-82d7-cb92e4a8acd8",
+              "parentUUID": "401fb81a-53a5-4107-8a57-82f36cf2f8b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a room",
+              "fullTitle": "CREATE ROOM Delete a room",
+              "timedOut": null,
+              "duration": 642,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  room.createRoomRequest();\n  room.deleteRoomRequest(Cypress.env().lastID);\n  room.performLogout();\n});",
+              "err": {},
+              "uuid": "5fbd0bc5-944d-4922-88a2-8ae4c0d4bf19",
+              "parentUUID": "401fb81a-53a5-4107-8a57-82f36cf2f8b2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6be072e3-5d12-4c36-82d7-cb92e4a8acd8",
+            "5fbd0bc5-944d-4922-88a2-8ae4c0d4bf19"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1319,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e68dfb57-14a7-4fc6-9ba1-9e93218f8c2a",
+          "title": "DELETE CLIENT",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a new client",
+              "fullTitle": "DELETE CLIENT Create a new client",
+              "timedOut": null,
+              "duration": 594,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  client.createClientRequest();\n  client.performLogout();\n});",
+              "err": {},
+              "uuid": "75be9ad3-8f90-4390-a547-7460276e4868",
+              "parentUUID": "e68dfb57-14a7-4fc6-9ba1-9e93218f8c2a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a client",
+              "fullTitle": "DELETE CLIENT Delete a client",
+              "timedOut": null,
+              "duration": 596,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  client.createClientRequest();\n  client.deleteClientRequest(Cypress.env().lastID);\n  client.performLogout();\n});",
+              "err": {},
+              "uuid": "e2a98d0b-879f-4a8d-a099-7dbeefef6aa0",
+              "parentUUID": "e68dfb57-14a7-4fc6-9ba1-9e93218f8c2a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "75be9ad3-8f90-4390-a547-7460276e4868",
+            "e2a98d0b-879f-4a8d-a099-7dbeefef6aa0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1190,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9a6eea54-f75a-49ad-9325-fe0aaf31aace",
+          "title": "DELETE BILL",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a bill",
+              "fullTitle": "DELETE BILL Create a bill",
+              "timedOut": null,
+              "duration": 589,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  bill.createBillRequest();\n  bill.performLogout();\n});",
+              "err": {},
+              "uuid": "eed6cc97-5ed1-4e9a-abf0-1c1ba7f4c659",
+              "parentUUID": "9a6eea54-f75a-49ad-9325-fe0aaf31aace",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a bill",
+              "fullTitle": "DELETE BILL Delete a bill",
+              "timedOut": null,
+              "duration": 608,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  bill.createBillRequest();\n  bill.deleteBillRequest(Cypress.env().lastID);\n  bill.performLogout();\n});",
+              "err": {},
+              "uuid": "9871b28e-8e86-4960-83e3-f26d47809c5e",
+              "parentUUID": "9a6eea54-f75a-49ad-9325-fe0aaf31aace",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eed6cc97-5ed1-4e9a-abf0-1c1ba7f4c659",
+            "9871b28e-8e86-4960-83e3-f26d47809c5e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0bac994e-45a8-4ee5-9625-9bd82eb377b4",
+          "title": "DELETE RESERVATION",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a reservation",
+              "fullTitle": "DELETE RESERVATION Create a reservation",
+              "timedOut": null,
+              "duration": 593,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  reservation.createReservationRequest();\n  reservation.performLogout();\n});",
+              "err": {},
+              "uuid": "53c2d3af-2e6e-44a5-b367-99b0d5c63036",
+              "parentUUID": "0bac994e-45a8-4ee5-9625-9bd82eb377b4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a reservation",
+              "fullTitle": "DELETE RESERVATION Delete a reservation",
+              "timedOut": null,
+              "duration": 629,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  reservation.createReservationRequest();\n  reservation.deleteReservationRequest(Cypress.env().lastID);\n  reservation.performLogout();\n});",
+              "err": {},
+              "uuid": "ca021218-b81d-4ab5-86b7-93ac1219a7a7",
+              "parentUUID": "0bac994e-45a8-4ee5-9625-9bd82eb377b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "53c2d3af-2e6e-44a5-b367-99b0d5c63036",
+            "ca021218-b81d-4ab5-86b7-93ac1219a7a7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1222,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "fe99db4d-4b48-4f0c-a338-4fa4c549f4e5",
+          "title": "DELETE ROOM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a room",
+              "fullTitle": "DELETE ROOM Create a room",
+              "timedOut": null,
+              "duration": 605,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  room.createRoomRequest();\n  room.performLogout();\n});",
+              "err": {},
+              "uuid": "495d999a-a7da-48ab-9de3-dae3f3ca492b",
+              "parentUUID": "fe99db4d-4b48-4f0c-a338-4fa4c549f4e5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a room",
+              "fullTitle": "DELETE ROOM Delete a room",
+              "timedOut": null,
+              "duration": 615,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  room.createRoomRequest();\n  room.deleteRoomRequest(Cypress.env().lastID);\n  room.performLogout();\n});",
+              "err": {},
+              "uuid": "aca40de3-dd9c-4c66-8cf5-52620e0b43a5",
+              "parentUUID": "fe99db4d-4b48-4f0c-a338-4fa4c549f4e5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "495d999a-a7da-48ab-9de3-dae3f3ca492b",
+            "aca40de3-dd9c-4c66-8cf5-52620e0b43a5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1220,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "36d26bbd-209d-4207-8897-2c3b20437bc5",
+          "title": "LOG IN",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login",
+              "fullTitle": "LOG IN login",
+              "timedOut": null,
+              "duration": 593,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticate().then(response => {\n  login.performLogout();\n});",
+              "err": {},
+              "uuid": "4d63c443-209d-4d65-ae6a-06f002359bff",
+              "parentUUID": "36d26bbd-209d-4207-8897-2c3b20437bc5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "d67be6f1-e656-4521-96ea-c10b6e735624",
+              "title": "LOG OUT",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "logout",
+                  "fullTitle": "LOG IN LOG OUT logout",
+                  "timedOut": null,
+                  "duration": 568,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.authenticate().then(response => {\n  login.performLogout();\n});",
+                  "err": {},
+                  "uuid": "99e2a4ce-d258-456d-bd99-9be6786c4ab9",
+                  "parentUUID": "d67be6f1-e656-4521-96ea-c10b6e735624",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "99e2a4ce-d258-456d-bd99-9be6786c4ab9"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 568,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "4d63c443-209d-4d65-ae6a-06f002359bff"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 593,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.2.0"
+    }
+  }
+}

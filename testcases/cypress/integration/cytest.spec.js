@@ -171,12 +171,12 @@ describe('LOG IN', () => {
 
 
     // TEST 10 LOGGA UT
-describe('LOG OUT', () => {
-    it('logout', () => {
-        cy.authenticate().then((response => {
-            login.performLogout()
-        }))
-    
+    describe('LOG OUT', () => {
+        it('logout', () => {
+            cy.authenticate().then((response => {
+                login.performLogout()
+            }))
+
         })
     })
 })
