@@ -3,9 +3,9 @@ const CREATE_CLIENT_ENDPOINT = 'http://localhost:3000/api/client/new'
 //functions
 function createClientPayload(){
     let clientPayload = {
-        "name":faker.name.firstName(),
-        "email":faker.internet.email(),
-        "telephone":faker.phone.phoneNumber()
+        "name": "Tester Testersson",
+        "email": "testnisse01@email.com",
+        "telephone": "0800000017282"
     }
 
     return clientPayload
@@ -55,11 +55,22 @@ function performLogout(){
     }))
 }
 
+//functions
+function createBillPayload(){
+    let billPayload = {
+        "value": "1000",
+        "paid": "false",
+    }
+
+    return billPayload
+}
+
 
 //exports
 module.exports = {
     createClientPayload,
     createClientRequest,
     deleteClientRequest,
-    performLogout
+    performLogout,
+    createBillPayload
 }
