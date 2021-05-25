@@ -2,7 +2,7 @@
 
 import * as client from '../helpers/clientHelpers'
 import * as bill from '../helpers/billHelpers'
-import * as reservation from '../helpers/clientHelpers'
+import * as reservation from '../helpers/reservationHelpers'
 import * as room from '../helpers/clientHelpers'
 import * as login from '../helpers/clientHelpers'
 
