@@ -56,7 +56,6 @@ function editClientRequest() {
             'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json',
         
-        
         },
         body: createClientPayload()
     }).then((response => {
