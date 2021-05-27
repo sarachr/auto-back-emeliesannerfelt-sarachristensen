@@ -181,3 +181,15 @@ describe('LOG OUT', () => {
     })
 })
 
+
+// TEST 11 ÄNDRA KLIENT
+describe('EDIT CLIENT', () => {
+
+it.only('EDIT CLIENT', () => {
+    cy.authenticate().then((response => {
+        client.createClientRequest()
+        client.editClientRequest()
+        client.performLogout()
+    }))
+})
+})

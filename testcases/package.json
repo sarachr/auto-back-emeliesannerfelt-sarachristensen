@@ -18,6 +18,7 @@
     "mochawesome-report-generator": "^5.2.0"
   },
   "dependencies": {
+    "faker": "^5.5.3",
     "mocha": "^5.2.0"
   }
 }

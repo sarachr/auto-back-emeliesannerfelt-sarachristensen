@@ -1,17 +1,18 @@
 const CREATE_CLIENT_ENDPOINT = 'http://localhost:3000/api/client/new'
-
+const faker = require('faker')
 
 
 //functions
 function createClientPayload() {
     let clientPayload = {
-        "name": "Tester Testersson",
-        "email": "testnisse01@email.com",
-        "telephone": "0800000017282"
+        "name": faker.name.firstName(),
+        "email": faker.internet.email(),
+        "telephone": faker.phone.phoneNumber()
     }
 
     return clientPayload
 }
+
 
 
 function createClientRequest() {
@@ -25,6 +26,7 @@ function createClientRequest() {
         body: createClientPayload()
     }).then((response => {
         expect(response.status).to.eq(200)
+        cy.log(response.body.id)
         Cypress.env({ lastID: response.body.id })
 
     }))
@@ -43,6 +45,24 @@ function deleteClientRequest(idToDelete) {
     }))
 }
 
+
+
+
+function editClientRequest() {
+    cy.request({
+        method: 'PUT',
+        url: 'http://localhost:3000/api/client/' + Cypress.env().lastID,
+        headers: {
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
+            'Content-Type': 'application/json',
+        
+        
+        },
+        body: createClientPayload()
+    }).then((response => {
+        expect(response.status).to.eq(200)
+    }))
+}
 
 function performLogout() {
     cy.request({
@@ -65,7 +85,6 @@ module.exports = {
     createClientRequest,
     deleteClientRequest,
     performLogout,
-
-
+    editClientRequest,
 
 }
