@@ -49,15 +49,21 @@ function deleteClientRequest(idToDelete) {
 
 
 function editClientRequest() {
+    let editClientPayload = {
+        "id": 1,
+        "name": faker.name.firstName(),
+        "email": faker.internet.email(),
+        "telephone": faker.phone.phoneNumber()
+    }
     cy.request({
         method: 'PUT',
-        url: 'http://localhost:3000/api/client/' + Cypress.env().lastID,
+        url: 'http://localhost:3000/api/client/1',
         headers: {
             'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json',
         
         },
-        body: createClientPayload()
+        body: editClientPayload
     }).then((response => {
         expect(response.status).to.eq(200)
     }))

@@ -184,15 +184,14 @@ describe('LOG OUT', () => {
 
 // TEST 11 ÄNDRA KLIENT
 describe('EDIT CLIENT', () => {
-    before(() => {
-        Cypress.env({lastID:3})
-    })
 
-it.only('EDIT CLIENT', () => {
-    cy.authenticate().then((response => {
+
+it('EDIT CLIENT', () => {
+  
+    cy.authenticate().then(() => {
         client.createClientRequest()
         client.editClientRequest()
         client.performLogout()
-    }))
+    })
 })
 })
