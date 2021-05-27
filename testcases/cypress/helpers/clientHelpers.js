@@ -61,7 +61,7 @@ function editClientRequest() {
         headers: {
             'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json',
-        
+
         },
         body: editClientPayload
     }).then((response => {
@@ -83,6 +83,32 @@ function performLogout() {
 }
 
 
+function editClientRequest2() {
+    let editClientPayload = {
+        "id": Cypress.env().lastID,
+        "name": faker.name.firstName(),
+        "email": faker.internet.email(),
+        "telephone": faker.phone.phoneNumber()
+    }
+    cy.request({
+        method: 'PUT',
+        url: 'http://localhost:3000/api/client/' + Cypress.env().lastID,
+        headers: {
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
+            'Content-Type': 'application/json',
+
+        },
+        body: editClientPayload
+    }).then((response => {
+        expect(response.status).to.eq(200)
+    }))
+}
+
+
+
+
+
+
 
 //exports
 module.exports = {
@@ -91,5 +117,7 @@ module.exports = {
     deleteClientRequest,
     performLogout,
     editClientRequest,
+    editClientRequest2,
 
 }
+

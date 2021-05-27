@@ -2,7 +2,7 @@
 
 const CREATE_BILL_ENDPOINT = 'http://localhost:3000/api/bill/new'
 
-function createBillPayload(){
+function createBillPayload() {
     let billPayload = {
         "value": "1000",
         "paid": "false"
@@ -11,43 +11,43 @@ function createBillPayload(){
     return billPayload
 }
 
-function createBillRequest(){
+function createBillRequest() {
     cy.request({
         method: 'POST',
         url: CREATE_BILL_ENDPOINT,
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        }, 
-        body:createBillPayload()
+        },
+        body: createBillPayload()
     }).then((response => {
         expect(response.status).to.eq(200)
-        Cypress.env({lastID:response.body.id})
-        
+        Cypress.env({ lastID: response.body.id })
+
     }))
 }
 
-function deleteBillRequest(idToDelete){
+function deleteBillRequest(idToDelete) {
     cy.request({
         method: 'DELETE',
-        url:'http://localhost:3000/api/bill/'+idToDelete,
+        url: 'http://localhost:3000/api/bill/' + idToDelete,
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))
 }
 
-function performLogout(){
+function performLogout() {
     cy.request({
         method: 'POST',
-        url:'http://localhost:3000/api/logout',
+        url: 'http://localhost:3000/api/logout',
         headers: {
-            'X-User-Auth':JSON.stringify(Cypress.env().loginToken), 
+            'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
             'Content-Type': 'application/json'
-        },                              
+        },
     }).then((response => {
         expect(response.status).to.eq(200)
     }))
